@@ -6,6 +6,8 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
+    "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
+    "eslint-fix": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",
     "prettier": "prettier \"**/*.{js,jsx,ts,tsx}\" --write"
   },
   "lint-staged": {
