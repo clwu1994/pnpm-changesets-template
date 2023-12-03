@@ -9,7 +9,8 @@
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "eslint-fix": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",
     "prettier": "prettier \"**/*.{js,jsx,ts,tsx}\" --write",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "commitmsg": "commitlint -E HUSKY_GIT_PARAMS"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -26,7 +27,7 @@
     "node": "16.19.1"
   },
   "engines": {
-    "node": "16.13.0",
+    "node": "16.19.1",
     "pnpm": ">=8"
   },
   "keywords": [],
@@ -34,6 +35,8 @@
   "license": "ISC",
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.54.0",
