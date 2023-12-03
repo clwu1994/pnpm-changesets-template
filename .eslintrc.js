@@ -1,13 +1,14 @@
 module.exports = {
+  parser: '@typescript-eslint/parser',
   env: {
     node: true,
     browser: true,
     es2021: true
   },
-  extends: 'eslint:recommended',
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
   ignorePatterns: ['**/*.test.js'],
   // 其他 ESLint 配置
-  plugins: ['jest'],
+  plugins: ['jest', '@typescript-eslint'],
   overrides: [
     {
       env: {
