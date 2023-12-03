@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "pnpm --filter=example run test",
+    "docs": "npx dumi dev",
     "build": "pnpm --filter=shared-utils run build",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
@@ -41,8 +42,10 @@
     "@commitlint/config-conventional": "^18.4.3",
     "@typescript-eslint/eslint-plugin": "^6.13.1",
     "@typescript-eslint/parser": "^6.13.1",
+    "@umijs/preset-dumi": "^1.1.54",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
+    "dumi": "^2.2.14",
     "eslint": "^8.54.0",
     "eslint-plugin-jest": "^27.6.0",
     "father": "^4.3.7",
