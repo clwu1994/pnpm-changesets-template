@@ -8,13 +8,19 @@
     "prepare": "husky install",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "eslint-fix": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",
-    "prettier": "prettier \"**/*.{js,jsx,ts,tsx}\" --write"
+    "prettier": "prettier \"**/*.{js,jsx,ts,tsx}\" --write",
+    "commit": "git-cz"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "prettier --write",
       "eslint --fix"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "volta": {
     "node": "16.19.1"
@@ -28,6 +34,8 @@
   "license": "ISC",
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.54.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.1.0",
