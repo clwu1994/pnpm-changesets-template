@@ -51,7 +51,7 @@ pnpm 全称是 “Performant NPM”，即高性能的 npm。
 
 ### 下图是与其它包管理器的比较
 
-![img.png](img.png)
+![img.png](images/img.png)
 
 ## pnpm Workspace
 
@@ -237,7 +237,7 @@ packages:
 ```
 
 如果开发环境不能满足条件，会报错:
-![img_6.png](img_6.png)
+![img1.png](images/img1.png)
 
 3. 集成changesets
 
@@ -289,7 +289,7 @@ pnpm create @eslint/config
 
 参考如下截图：
 
-![img_2.png](img_2.png)
+![img2.png](images/img2.png)
 
 .eslintrc.js 文件内容
 
@@ -430,7 +430,7 @@ pnpm prepare
 
 如图，执行成功后，项目中生成一个 .husky 目录
 
-![img_3.png](img_3.png)
+![img3.png](images/img3.png)
 
 创建 Git 挂钩
 
@@ -445,7 +445,7 @@ pnpm husky add .husky/pre-commit "npm test"
 
 执行成功，.husky 目录多出一个 pre-commit 文件
 
-![img_4.png](img_4.png)
+![img4.png](images/img4.png)
 
 - 配置代码检测
 
@@ -551,11 +551,11 @@ lib
 
 第一种，在vscode中配置：左下角设置 => 工作区 => 文本编辑器
 
-![img_8.png](img_8.png)
+![img5.png](images/img5.png)
 
 第二种，在WebStorm中配置：右上角设置 => Preferences => Languages & Framework => JavaScript => Prettier
 
-![img_10.png](img_10.png)
+![img6.png](images/img6.png)
 
 8. 集成Commitizen
 
@@ -598,7 +598,7 @@ git add .
 pnpm commit
 ```
 
-![img_13.png](img_13.png)
+![img7.png](images/img7.png)
 
 详细文档：[Git Guide
 Angular提交信息规范](https://zj-git-guide.readthedocs.io/zh-cn/latest/message/Angular%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF%E8%A7%84%E8%8C%83/)
@@ -654,11 +654,11 @@ npx husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}'
 
 执行成功，.husky 目录多出一个 `commit-msg` 文件
 
-![img_15.png](img_15.png)
+![img8.png](images/img8.png)
 
 这样当你进行提交信息时，commitlint 将自动校验提交信息的格式是否符合预定义规范，并给出相应的提示和错误
 
-![img_17.png](img_17.png)
+![img9.png](images/img9.png)
 
 10. 集成Jest
 
@@ -670,7 +670,7 @@ pnpm add Jest -Dw
 
 - 解决 `eslint` 报错
 
-![img_18.png](img_18.png)
+![img10.png](images/img10.png)
 
 这个问题通常是因为您的 ESLint 配置中没有包含 Jest 的相关规则。为了解决这个问题，您可以考虑以下步骤：
 
@@ -795,7 +795,7 @@ pnpm dumi
 
 当在执行 pnpm lint-staged 命令时，报如下错误，原因是node版本太低，不支持??= 的语法，切花到高版本node，重新安装依赖就可以了。
 
-![img_5.png](img_5.png)
+![img11.png](images/img11.png)
 
 ## 总结
 
