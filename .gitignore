@@ -11,3 +11,5 @@ Thumbs.db
 lib
 /**/.pnpm-debug.log
 /.npm
+
+.dumi/tmp*
