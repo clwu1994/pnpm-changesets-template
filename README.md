@@ -319,6 +319,47 @@ module.exports = {
 }
 ```
 
+在 TypeScript 项目中使用 ESLint 是一种很好的做法，可以帮助您保持代码的一致性和质量。以下是如何结合 TypeScript 和 ESLint 的步骤：
+
+(1). 安装和配置 ESLint： 首先，您需要在项目中安装 ESLint。运行以下命令来安装 ESLint 和 TypeScript 解析器：
+
+```bash
+pnpm add eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin@latest -Dw
+```
+
+(2). 在 .eslintrc.js 中加入如下配置：
+
+```js
+module.exports = {
+  parser: '@typescript-eslint/parser',
+  env: {
+    node: true,
+    browser: true,
+    es2021: true
+  },
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  ignorePatterns: ['**/*.test.js'],
+  // 其他 ESLint 配置
+  plugins: ['@typescript-eslint'],
+  overrides: [
+    {
+      env: {
+        node: true
+      },
+      files: ['.eslintrc.{js,cjs}'],
+      parserOptions: {
+        sourceType: 'script'
+      }
+    }
+  ],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module'
+  },
+  rules: {}
+}
+```
+
 5. 接入husky
 
 husky 是一个 Git 钩子（Git hooks）工具，它可以让你在 Git 事件发生时执行脚本，进行代码格式化、测试等操作。
@@ -639,6 +680,52 @@ pnpm add Jest -Dw
 
 ```bash
 pnpm add eslint-plugin-jest -Dw
+```
+
+将 jest 添加到 .eslintrc 配置文件的插件部分。您可以省略 eslint-plugin- 前缀：
+
+```json
+{
+  "plugins": ["jest"]
+}
+```
+
+然后在规则部分配置您要使用的规则。
+
+```json
+{
+  "rules": {
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
+  }
+}
+```
+
+参考文档：[eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
+
+11. 接入father
+
+father 是一款 NPM 包研发工具，能够帮助开发者更高效、高质量地研发 NPM 包、生成构建产物、再完成发布。
+
+- 安装
+
+```bash
+pnpm add father -Dw
+```
+
+添加 father 配置文件：
+
+```js
+export default {
+  cjs: {
+    input: 'src', // 默认编译目录
+    platform: 'node', // 默认构建为 Node.js 环境的产物
+    transformer: 'esbuild' // 默认使用 esbuild 以获得更快的构建速度
+  }
+}
 ```
 
 ## 常见报错
